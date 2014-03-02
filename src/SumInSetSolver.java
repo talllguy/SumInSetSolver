@@ -1,6 +1,11 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Elliott Plack
+ * @algorithm solver using 
+ */
 
 public class SumInSetSolver {
 
@@ -9,17 +14,19 @@ public class SumInSetSolver {
 		int n = getN(sc); // get the n by method
 		int x = getX(sc); // get the x by method
 		int[] set = new int[n]; // declare a set
-		set = getSetValues(n, sc);
-		Boolean determine = test(set,x);
+		set = getSetValues(n, sc); // fill the set with values by method
+		Boolean determine = test(set,x); // method to determine if there are matching sums.
+		
+		// the following if-else outputs the determination
 		if (determine == true)
 			System.out.println("There are two elements in the set whose sums equal " + x);
 		else
 			System.out.println("There are not any elements in the set whose sums equal " + x);
-		sc.close();
+		sc.close(); // close the Scanner
 	}
 
 	private static int getN(Scanner sc) {
-		
+		// gets n from user
 		System.out.println("Enter 'n' (number of real numbers in set): ");
 		int n = sc.nextInt();
 		return n;
@@ -27,12 +34,14 @@ public class SumInSetSolver {
 	}
 	
 	private static int getX(Scanner sc) {
+		// gets x from user
 		System.out.println("Enter 'x' (number to determine if sum equals): ");
 		int x = sc.nextInt();
 		return x;
 	}
 	
 	private static int[] getSetValues(int n, Scanner sc) {
+		// fills an array of n length
 		int[] array = new int[n];
 		System.out.println("Enter " + n + " real numbers:");
 		for (int i = 0; i < n; i++) {
@@ -45,7 +54,7 @@ public class SumInSetSolver {
 	{
 	    Arrays.sort(array);
 
-	    int i = 0;            // index of first element.
+	    int i = 0; // index of first element.
 	    int j = array.length - 1; // index of last element. 
 
 	    while(i<j)
